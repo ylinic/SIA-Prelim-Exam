@@ -38,18 +38,14 @@
             confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                    )
+                    ToastHandler.success("Deleted")
                 }
             })
         }
     };
     
     const ToastHandler = {
-        show:() => {
+        error: (msg) => {
             toastr.options = {
                 "closeButton": false,
                 "debug": false,
@@ -67,7 +63,47 @@
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             }
-            toastr["success"]("Are you the six fingered man?");
+            toastr["error"](msg);
+        },
+        success: (msg) => {
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr["success"](msg);
+        },
+        show:(msg) => {
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr["success"](msg);
         } 
     }
 
@@ -75,7 +111,8 @@
     $(document).ready(() => {
         $(document).on('click', '#swal1', () => SwalHandler.handleSwal1());
         $(document).on('click', '#swal2', () => SwalHandler.handleSwal2());
-        $(document).on('click', '#toastr', () => ToastHandler.show());
+        $(document).on('click', '#toastr', () => ToastHandler.error("Test 1"));
+        ToastHandler.success("Test");
     });
 
 </script>
