@@ -7,7 +7,7 @@
     <title>SIA PRELIM EXAM</title>
 </head>
 <body>
-    <h1>INITIALaaa</h1>
+    <h1>SAMPLE20</h1>
 
 </body>
 </html>
