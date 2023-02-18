@@ -7,7 +7,7 @@
     <title>SIA PRELIM EXAM</title>
 </head>
 <body>
-    <h1>INITIAL COMMIT</h1>
+    <h1>INITIAL COMMITS</h1>
 
 </body>
 </html>
